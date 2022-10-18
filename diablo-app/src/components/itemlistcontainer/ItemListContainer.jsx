@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import Title from "../title/Title";
-import ItemCount from "../itemCount/ItemCount";
-import ItemList from "../itemList/ItemList";
+import ItemCount from "../ItemCount/ItemCount";
+import ItemList from "../ItemList/ItemList";
 
 const vinos = [
     {id: 1, image: "https://d2r9epyceweg5n.cloudfront.net/stores/001/367/826/products/1391-d7d023796f9eb5ad4c16046855094017-640-0.jpg", title: "Vasija Secreta",},

@@ -1,13 +1,13 @@
-
 import './App.css';
-import NavBar from './components/navBar/NavBar';
-import  ItemListContainer  from './components/itemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import NavBar from './components/NavBar/NavBar';
+//import  ItemListContainer  from './components/ItemListContainer/ItemListContainer';
 
 function App() {
   return (
     <div>
       <NavBar />
-      <ItemListContainer texto='Diablo Vinos'/>
+      <ItemDetailContainer/>
     </div>
   );
 }
