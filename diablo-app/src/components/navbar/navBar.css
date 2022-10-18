@@ -1,9 +1,17 @@
 .container_navbar{
-    background-color: black;
-    color: white;
+    background-color: aliceblue;
+    color: black;
     
+    
+}
+.nav__link {
+    text-decoration: none;
+    color: black;
 }
 
 .container_navbar ul {
     list-style: none;
+   
+    
 }
+
