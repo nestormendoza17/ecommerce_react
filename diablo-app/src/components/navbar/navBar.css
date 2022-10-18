@@ -1,0 +1,9 @@
+.container_navbar{
+    background-color: black;
+    color: white;
+    
+}
+
+.container_navbar ul {
+    list-style: none;
+}
