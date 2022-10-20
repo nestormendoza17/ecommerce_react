@@ -33,7 +33,7 @@ export const ItemListContainer = ({texto}) => {
 
     return (
         <div className="container__">
-            <Title greeting={texto}/>
+            <Title />
             <ItemList data={data} />
 
         </div>
