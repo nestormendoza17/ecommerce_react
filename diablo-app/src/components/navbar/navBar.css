@@ -1,8 +1,9 @@
-.container{
+.container_navbar{
     background-color: aliceblue;
     color: black;
-    
-    
+    font-size: x-large;
+    margin: auto;
+    padding-left: 10px;  
 }
 .nav__link {
     text-decoration: none;
@@ -10,8 +11,6 @@
 }
 
 .container_navbar ul {
-    list-style: none;
-   
-    
+    list-style: none;     
 }
 
