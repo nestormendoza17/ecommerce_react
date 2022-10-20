@@ -12,20 +12,26 @@ export const ItemListContainer = ({texto}) => {
 
     useEffect(()=> {
         const querydb = getFirestore();
-        const queryCollection = collection(querydb, 'products');
-        const queryFilter = query(queryCollection, where('category', '==', categoriaId), )
-        getDocs(queryFilter)
-        .then(res=> setData(res.docs.map(product => ({id:product.id, ...res.data()}))))
-    } else {
-        getDocs(queryCollection)
-        .then(res=> setData(res.docs.map(product=>({id:product.id, ...res.data()}))))
-        /* if (categoriaId) {
-            getData.then(res=> setData(res.filter(vino=> vino.category === categoriaId)));
-        } else {
-        getData.then(res=> setData(res));
-    } */
-    }, [categoriaId])
-
+        const queryCollection = collection(querydb, 'vinos');
+        if (categoria) {
+            const queryFilter = query(
+              queryCollection,
+              where("categoria", "==", categoriaId)
+            );
+            getDocs(queryFilter).then((res) =>
+              setItems(
+                res.docs.map((product) => ({ id: product.id, ...product.data() }))
+              )
+            );
+          } else {
+            getDocs(queryCollection).then((res) =>
+              setItems(
+                res.docs.map((product) => ({ id: product.id, ...product.data() }))
+              )
+            );
+          }
+        }, [categoriaId]);
+      
     
 
     return (
