@@ -19,7 +19,7 @@ const Cart =()=> {
     }
     const handleClick = ()=>{
         const db = getFirestore();
-        const orderCollection = collection (db,'order');
+        const orderCollection = collection(db,'order');
         addDoc(orderCollection, order)
         .then(({id})=> console.log(id))
 
