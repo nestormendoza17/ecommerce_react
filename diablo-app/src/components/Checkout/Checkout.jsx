@@ -2,8 +2,8 @@ import React from 'react';
 import { useState } from 'react';
 import { useCartContext } from '../Context/CartContext';
 import { Link } from 'react-router-dom';
-import { useCartContext } from '../Context/CartContext';
-import { useState } from 'react';
+import Form from '../Form/Form';
+import ItemCart from '../ItemCart/ItemCar';
 
 const Checkout = () => {
     const { cart, totalPrice } = useCartContext();

@@ -1,46 +1,45 @@
 import "./itemListContainer.css";
 import React, {useState, useEffect} from "react";
 import {getFirestore, collection, getDocs, query, where} from "firebase/firestore";
-import Title from "../title/Title";
+/* import Title from "../title/Title"; */
 import ItemList from "../ItemList/ItemList";
 import {useParams} from 'react-router-dom';
 
 
-export const ItemListContainer = ({texto}) => {
-    const [data,setData] =useState([]);
-    const {categoriaId} = useParams();
+const ItemListContainer = () => {
+  const [items, setItems] = useState([]);
+  const { category } = useParams();
 
-    useEffect(()=> {
-        const querydb = getFirestore();
-        const queryCollection = collection(querydb, 'vinos');
-        if (categoria) {
-            const queryFilter = query(
-              queryCollection,
-              where("categoria", "==", categoriaId)
-            );
-            getDocs(queryFilter).then((res) =>
-              setItems(
-                res.docs.map((product) => ({ id: product.id, ...product.data() }))
-              )
-            );
-          } else {
-            getDocs(queryCollection).then((res) =>
-              setItems(
-                res.docs.map((product) => ({ id: product.id, ...product.data() }))
-              )
-            );
-          }
-        }, [categoriaId]);
-      
-    
+  useEffect(() => {
+    const querydb = getFirestore();
+    const queryCollection = collection(querydb, "vinos");
 
-    return (
-        <div className="container__">
-            <Title />
-            <ItemList data={data} />
+    if (category) {
+      const queryFilter = query(
+        queryCollection,
+        where("categoria", "==", category)
+      );
+      getDocs(queryFilter).then((res) =>
+        setItems(
+          res.docs.map((vino) => ({ id: vino.id, ...vino.data() }))
+        )
+      );
+    } else {
+      getDocs(queryCollection).then((res) =>
+        setItems(
+          res.docs.map((vino) => ({ id: vino.id, ...vino.data() }))
+        )
+      );
+    }
+  }, [category]);
 
-        </div>
-    )
-}
+  return (
+    <div className="container">
+      <div className="row">
+        <ItemList vinos={items} />
+      </div>
+    </div>
+  );
+};
 
 export default ItemListContainer;

@@ -40,6 +40,10 @@ const Form = ({handleId}) => {
     return (
         <div className="col-md-9">
             <form className="row g-3" onSubmit ={handleSubmit}>
+            <div className="col-md-12">
+                    <label htmlFor="nombre"> Nombre</label>
+                    <input type="text" className="form-control" id="telefono" onChange={handleNombre} value={telefono}/>
+                </div>
                 <div className="col-md-12">
                     <label htmlFor="telefono"> Telefono</label>
                     <input type="text" className="form-control" id="telefono" onChange={handleTelefono} value={telefono}/>

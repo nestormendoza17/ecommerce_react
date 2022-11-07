@@ -1,4 +1,4 @@
-export const Vinos = [
+export const vinos = [
     {id:1, nombre:"VAS", imagen:"https://d2r9epyceweg5n.cloudfront.net/stores/001/367/826/products/1371-837f727f3a3773ece416046852122455-320-0.jpg", descripcion:"En tu mesa tendras un pedacito de Cafayate.", precio:2500, stock:80, categoria: "dulce",},
     {id:2, nombre:"Gata Flora", imagen:"https://d2r9epyceweg5n.cloudfront.net/stores/001/367/826/products/1341-a52246dc67f7b83ba216046847966461-320-0.jpg", descripcion:"Su sabor caracteristico nos lleva a sentir las maderas de la barrica donde se estacionó.", precio:890, stock:70, categoria:"tinto"},
     {id:3, nombre:"La Maria Malbec", imagen:"https://d2r9epyceweg5n.cloudfront.net/stores/001/367/826/products/161-5035423bd75211764e16044154269114-320-0.jpg", descripcion:"No te dejes engañar, a veces lo suave termina siendo fuerte.", precio:1300, stock:90,categoria:"tinto",},
