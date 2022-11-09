@@ -1,43 +1,49 @@
-import React from 'react';
-import { useState } from 'react';
-import { useCartContext } from '../Context/CartContext';
-import { Link } from 'react-router-dom';
-import Form from '../Form/Form';
-import ItemCart from '../ItemCart/ItemCar';
+import React from "react";
+import { useState } from "react";
+import { useCartContext } from "../Context/CartContext";
+import ItemCart from "../ItemCart/ItemCart";
+import Form from "../Form/Form";
+import { Link } from "react-router-dom";
 
 const Checkout = () => {
-    const { cart, totalPrice } = useCartContext();
-    const {orderId, setOrderId } = useState ("") ;
-    const handleId= (numeroDeOrden) => {
-        setOrderId(numeroDeOrden);
+  const { cart, totalPrice } = useCartContext();
 
-    };
-    if (cart.length === 0) {
-        return (
-            <div classsName= "container mt-5">
-                <div className="col-md-12">
-                    <h1 className="text-center">No agregaste un vinito</h1>
-                    <Link to= "/">
-                        <button className="btn btn-primary">Ir al home</button>
-                    </Link>
-                </div>
-            </div>
-        );
-    }
-    if (orderId) {
-        return (
-            <div className="container">
-               <div className="row">
-                <div className="col-md-12">
-                    <h1 classsName="text-center">Gracias por comprar tu vinito.</h1>
-                    <h3 className="text-center mt-3">Te dejamos el codigo de seguimiento de tu compra : {orderId}</h3>
-                </div>
-               </div>
-            </div>
-        );
-    }
+  const [orderId, setOrderId] = useState("");
+
+  const handleId = (numeroDeOrden) => {
+    setOrderId(numeroDeOrden);
+  };
+
+  if (cart.length === 0) {
     return (
-        <div className="container mt-5">
+      <div className="container mt-5">
+        <div className="col-md-12">
+          <h1 className="text-center">No tenes ningun producto</h1>
+          <Link to="/">
+            <button className="btn btn-primary">Ir al home</button>
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  if (orderId) {
+    return (
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
+            <h1 className="text-center">Gracias por tu compra! </h1>
+            <h3 className="text-center mt-3">
+              Te dejamos el codigo de seguimiento : {orderId}
+            </h3>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="container mt-5">
       <div className="row">
         <div className="col-md-6">
           <Form handleId={handleId} />
@@ -46,13 +52,13 @@ const Checkout = () => {
           {cart.map((producto) => (
             <ItemCart key={producto.id} producto={producto} />
           ))}
-          <p className="text-center"><b>Total a pagar : ${totalPrice()}</b>{" "}
+          <p className="text-center">
+            <b>Total a pagar : ${totalPrice()}</b>{" "}
           </p>
         </div>
       </div>
     </div>
   );
-  
-}
+};
 
 export default Checkout;

@@ -8,8 +8,10 @@ const Item = ({info}) => {
     console.log('Item: ', nombre);
     return (
         <Link to={`/detalle/${info.id}`} className="vinos">
-            <img src={info.image} alt="" />
-            <p>{info.title}</p>
+            <p>{info.titulo}</p>
+            <img src={info.imagen} alt="" />
+            <p>${info.price}</p>
+            
         </Link>
     );
 }

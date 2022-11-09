@@ -18,20 +18,40 @@ export const ItemDetail = ({data})=> {
     }
 
     return (
-        <div className="container">
-            <div className="detail">
-                <img className="detail__image" src={data.image} alt="" />
-                <div className="content">
-                {
-                    goToCart
-                    ? <Link to='/cart'>Llevarte el vinito</Link>
-                    : <ItemCount initial={1} stock={5} onAdd={onAdd} />
-                }
-                <h1>{data.title}</h1>
-                </div>
-            </div>
+        <div className="container mt-5">
+      <div className="row">
+        <div className="col-md-6">
+          <img
+            src={data.imagen}
+            alt={data.titulo}
+            className="img-fluid item-detail__img"
+          />
         </div>
-    );
-}
-
+        <div className="col-md-6">
+          <h2 className="text-center item-detail__title">{data.titulo}</h2>
+          <p className="text-center">${data.price}</p>
+          <p className="text-center">{data.descripcion}</p>
+          {goToCart ? (
+            <div className="row mt-5">
+              <div className="col-md-6 text-center">
+                <Link to="/cart">
+                  <button className="btn btn-success">Ir al carrito</button>
+                </Link>
+              </div>
+              <div className="col-md-6 text-center">
+                <Link to="/">
+                  <button className="btn btn-warning">Seguir comprando</button>
+                </Link>
+              </div>
+            </div>
+          ) : (
+            <div className="col-md-6 offset-3">
+              <ItemCount initial={1} stock={data.stock} onAdd={onAdd} />
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
 export default ItemDetail;
