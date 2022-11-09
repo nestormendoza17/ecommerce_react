@@ -3,6 +3,7 @@
     color: black;
     font-size: x-large;
     margin: auto;
+    padding-top: 10px;
     padding-left: 10px;  
 }
 .nav__link {

@@ -12,7 +12,7 @@ export const NavBar = () => {
                     <NavLink className="nav__link" to='/'><img src={logo} width="86" alt="Logo" /></NavLink>
                 </div>
                 <ul className="nav__list">
-                    <li> <NavLink className="nav__link" to='/categoria/tinto'>Vinos Fuertes</NavLink></li>
+                    <li> <NavLink className="nav__link" to='/categoria/fuerte'>Vinos Fuertes</NavLink></li>
                 </ul>
                 <ul className="nav__list">
                     <li> <NavLink className="nav__link" to='/categoria/suave'>Vinos Suaves</NavLink></li>
