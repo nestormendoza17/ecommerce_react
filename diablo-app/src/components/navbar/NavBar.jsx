@@ -2,13 +2,14 @@ import "./navBar.css"
 import React from 'react';
 import CartWidget from "../CartWidget/CartWidget";
 import {NavLink} from 'react-router-dom';
+import logo from "../image/logo_large.png";
 
 export const NavBar = () => {
     return (
         <div className="container_navbar">
             <nav className="nav">
                 <div>
-                    <NavLink className="nav__link" to='/'>Diablo Vinos</NavLink>
+                    <NavLink className="nav__link" to='/'><img src={logo} width="86" alt="Logo" /></NavLink>
                 </div>
                 <ul className="nav__list">
                     <li> <NavLink className="nav__link" to='/categoria/tinto'>Vinos Fuertes</NavLink></li>

@@ -5,6 +5,7 @@ import ItemCart from "../ItemCart/ItemCart";
 import Form from "../Form/Form";
 import { Link } from "react-router-dom";
 
+
 const Checkout = () => {
   const { cart, totalPrice } = useCartContext();
 
@@ -32,7 +33,7 @@ const Checkout = () => {
       <div className="container">
         <div className="row">
           <div className="col-md-12">
-            <h1 className="text-center">Gracias por tu compra! </h1>
+            <h1 className="text-center">Gracias por tu compra!</h1>
             <h3 className="text-center mt-3">
               Te dejamos el codigo de seguimiento : {orderId}
             </h3>
@@ -49,8 +50,8 @@ const Checkout = () => {
           <Form handleId={handleId} />
         </div>
         <div className="col-md-6">
-          {cart.map((producto) => (
-            <ItemCart key={producto.id} producto={producto} />
+          {cart.map((product) => (
+            <ItemCart key={product.id} product={product} />
           ))}
           <p className="text-center">
             <b>Total a pagar : ${totalPrice()}</b>{" "}
